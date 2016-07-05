@@ -25,8 +25,14 @@ exports.handler = function(event, context, callback) {
           who = message.userIdentity.userName || who
 
           // Don't want to include events that we don't care about:
-          if (
-            (message.eventName.startsWith('Delete') || message.eventName.startsWith('Create') || message.eventName.startsWith('Update') || message.eventName.startsWith('Put'))
+          if (message.eventName.startsWith('Delete')
+            || message.eventName.startsWith('Create')
+            || message.eventName.startsWith('Update')
+            || message.eventName.startsWith('Put')
+            || message.eventName.startsWith('Authorize')
+            || message.eventName.startsWith('Modify')
+            || message.eventName.startsWith('Allocate')
+            || message.eventName.startsWith('Run')
           ) {
             slack_notify = true
             slack_fields.push(
