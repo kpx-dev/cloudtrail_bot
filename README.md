@@ -5,6 +5,8 @@
 ### Overview
 This Slack bot uses Gordon to deploy the Lambda app
 
+![demo](demo.gif "Demo")
+
 ### Getting Started
 
 Create the `src/slack-bot/.env` file with your Slack credential
