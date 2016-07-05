@@ -7,10 +7,14 @@ This Slack bot uses Gordon to deploy the Lambda app
 
 ### Getting Started
 
-Create the `.env` file with your Slack credential
+Create the `src/slack-bot/.env` file with your Slack credential
 ```sh
 SLACK_TOKEN=xxx/yyy/zzz
 ```
+
+Currently only reporting these event names starting with:
+
+    Delete, Create, Update, Put, Authorize, Modify, Allocate, Run
 
 ### Deploy
 ```sh
