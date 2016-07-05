@@ -1,7 +1,7 @@
 ---
-project: cloudwatch-lambda
+project: serverless-cloudtrail-slack
 default-region: us-east-1
-code-bucket: knn-lambda
+code-bucket: serverless-cloudtrail-slack
 apps:
   - gordon.contrib.lambdas
   - slack-bot
