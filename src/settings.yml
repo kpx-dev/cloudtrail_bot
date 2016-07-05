@@ -1,0 +1,7 @@
+---
+project: cloudwatch-lambda
+default-region: us-east-1
+code-bucket: knn-lambda
+apps:
+  - gordon.contrib.lambdas
+  - slack-bot

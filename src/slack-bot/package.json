@@ -1,0 +1,19 @@
+{
+  "babel": {
+    "presets": [
+      "es2016"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.8.0",
+    "babel-preset-es2016": "^6.11.0"
+  },
+  "scripts": {
+    "build": "babel *.js --out-dir $TARGET"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.6.1",
+    "dotenv": "^2.0.0",
+    "request-json": "^0.5.6"
+  }
+}

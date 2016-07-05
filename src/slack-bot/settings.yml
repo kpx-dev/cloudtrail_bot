@@ -1,0 +1,13 @@
+lambdas:
+  slack-bot:
+    code: ./
+    handler: code.handler
+    runtime: nodejs4.3
+    description: ES6 function listening for AWS CloudWatch logs and post events to Slack
+    memory: 128
+    timeout: 15
+    build:
+      - cp .env {target}
+      - cp -Rf * {target}
+      - cd {target} && {npm_path} install {npm_install_extra}
+      - TARGET={target} npm run build
