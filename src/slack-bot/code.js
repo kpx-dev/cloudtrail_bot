@@ -11,7 +11,8 @@ exports.handler = function(event, context, callback) {
       message = '',
       slack_fields = [],
       who = 'Unknown',
-      // ignore_users = ['gordon', 'serverless'],
+      ignore_users = ['gordon', 'serverless'],
+      ignore_events = ['CreateLogStream'],
       slack_notify = false
 
   zlib.gunzip(payload, (e, result) => {
@@ -25,7 +26,8 @@ exports.handler = function(event, context, callback) {
           who = message.userIdentity.userName || who
 
           // Don't want to include events that we don't care about:
-          if (message.eventName.startsWith('Delete')
+          if (
+            (message.eventName.startsWith('Delete')
             || message.eventName.startsWith('Create')
             || message.eventName.startsWith('Update')
             || message.eventName.startsWith('Put')
@@ -33,6 +35,8 @@ exports.handler = function(event, context, callback) {
             || message.eventName.startsWith('Modify')
             || message.eventName.startsWith('Allocate')
             || message.eventName.startsWith('Run')
+          ) && ignore_events.indexOf(message.eventName) < 0
+            && ignore_users.indexOf(who) < 0
           ) {
             slack_notify = true
             slack_fields.push(

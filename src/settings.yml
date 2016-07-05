@@ -1,6 +1,6 @@
 ---
 project: serverless-cloudtrail-slack
-default-region: us-east-1
+default-region: us-west-2
 code-bucket: serverless-cloudtrail-slack
 apps:
   - gordon.contrib.lambdas
